@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+        <title>Confirmar remoção</title>
+    </head>
+    <body>
+        <h3>Deseja mesmo remover a relação ?</h3>
+        <form action="delete_sub_cat?nome={{ params.get('sub') }}" method = "post">
+            <p><input type="submit" value="Remover" ></p>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>IVMs</title>
+    </head>
+    <body style="padding:20px">
+        {% if cursor %}
+            <table border="2px">
+                <thead>
+                    <tr>
+                        <th>Número de série</th>
+                        <th>Fabricante</th>
+                        <th>Eventos de Reposições</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for record in cursor %}
+                        <tr>
+                            <td>{{ record[0] }} </td>
+                            <td>{{ record[1] }} </td>
+                            <td><a href="repos?num_serie={{ record[0] }}&fabricante={{ record[1] }}">Listar Eventos</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <h4>Lista de opções:</h4>
+            <ul>
+                <li><a href="retailers">Menu dos Retalhistas</a></li>
+                <li><a href ="categories">Menu das Categorias</a></li>
+            </ul>
+        {% else %}
+        <p> Erro: ao obter dados da base de dados! </p>
+        {% endif %}
+    </body>
+</html>

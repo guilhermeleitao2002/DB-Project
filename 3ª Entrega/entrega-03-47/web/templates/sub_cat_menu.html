@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Sub Categorias</title>
+    </head>
+    <body style="padding:20px">
+        {% if cursor %}
+            <h3>Relações entre Super Categorias e Sub Categorias</h3>
+            <table border="2px">
+                <thead>
+                    <tr>
+                        <th>Super Categoria</th>
+                        <th>Subcategoria</th>
+                        <th>Remover relação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for record in cursor %}
+                        <tr>
+                            <td>{{ record[0] }} </td>
+                            <td>{{ record[1] }}</td>
+                            <td><a href="confirm_delete_sub_cat?sub={{ record[1] }}">Remover relação</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <a href="categories">Voltar</a>
+        {% else %}
+        <p> Erro: ao obter dados da base de dados! </p>
+        {% endif %}
+    </body>
+</html>

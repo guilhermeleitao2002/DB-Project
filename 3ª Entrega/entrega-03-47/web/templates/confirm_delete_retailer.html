@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+        <title>Confirmar Remoção</title>
+    </head>
+    <body>
+        <h3>Deseja mesmo remover o retalhista com TIN {{ params.get("tin") }} ?</h3>
+        <form action="delete_retailer?tin={{ params.get('tin') }}" method = "post">
+            <p><input type="submit" value="Remover" ></p>
+        </form>
+    </body>
+</html>
